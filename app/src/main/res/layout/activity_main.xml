@@ -21,4 +21,18 @@
         android:text="Stop Music"
         android:onClick="music"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSendMessage"
+        android:text="Send Permission Message"
+        android:onClick="sendMessage"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnOrderedBroadcasts"
+        android:text="Send Ordered Broadcast Message"
+        android:onClick="sendMessage"/>
+
 </LinearLayout>

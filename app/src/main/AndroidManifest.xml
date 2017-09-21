@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.w4d3boundservicebroadcasterpermission">
 
+    <uses-permission android:name="com.example.admin.w4d3boundservicebroadcasterpermission" />
+
+    <permission android:name="com.example.admin.w4d3boundservicebroadcasterpermission" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,9 +29,23 @@
             android:exported="true" />
 
         <receiver
-            android:name=".DynamicReceiver"
+            android:name=".TopPriorityReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" >
+            <intent-filter
+                android:priority="10">
+                <action android:name="Priority" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".LowPriorityReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter
+                android:priority="1">
+                <action android:name="Priority" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

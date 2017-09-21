@@ -12,6 +12,10 @@ public class MainActivity extends AppCompatActivity {
 
     DynamicReceiver dynamicReceiver = new DynamicReceiver();
     IntentFilter intentFilter = new IntentFilter();
+
+    CustomReceiver customReceiver = new CustomReceiver();
+    IntentFilter customIntentFilter = new IntentFilter();
+
     Intent intentMusic;
 
     @Override
@@ -30,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(Intent.ACTION_HEADSET_PLUG);
         registerReceiver(dynamicReceiver, intentFilter);
 
+        customIntentFilter.addAction("Knock_Knock");
+        registerReceiver(customReceiver,customIntentFilter,"com.example.admin.w4d3boundservicebroadcasterpermission",null);
+
         super.onStart();
     }
 
@@ -38,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         unregisterReceiver(dynamicReceiver);
+        unregisterReceiver(customReceiver);
     }
 
     @Override
@@ -70,5 +78,24 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public void sendMessage(View view) {
+
+        switch (view.getId()) {
+            case R.id.btnSendMessage:
+            Intent intent = new Intent();
+            intent.setAction("Knock_Knock");
+            intent.putExtra("data", "Access Granted");
+            sendBroadcast(intent);
+                break;
+
+            case R.id.btnOrderedBroadcasts:
+
+                Intent intent1 = new Intent();
+                intent1.setAction("Priority");
+                sendBroadcast(intent1);
+                break;
+        }
     }
 }
