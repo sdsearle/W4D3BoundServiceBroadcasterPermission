@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120sp">
+
+
+    <ImageView
+        android:id="@+id/ivMusicIcon"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/shotgunsamurai"/>
+
+
+    <ImageView
+        android:id="@+id/btnPlay"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/play"
+         />
+
+    <ImageView
+        android:id="@+id/btnPause"
+        android:layout_width="95sp"
+        android:layout_height="100sp"
+
+        android:src="@drawable/pause"
+         />
+
+    <ImageView
+        android:id="@+id/btnStop"
+        android:layout_width="95sp"
+        android:layout_height="100sp"
+
+        android:src="@drawable/stop"
+         />
+
+</LinearLayout>
