@@ -111,7 +111,7 @@ public class ForegroundMusicService extends Service {
                     .setContentIntent(pendingIntent)
                     .addAction(R.drawable.play, "Play", pplayIntent)
                     .addAction(R.drawable.pause, "Pause", ppauseIntent)
-                    .addAction(R.drawable.play, "Stop", pstopIntent)
+                    .addAction(R.drawable.stop, "Stop", pstopIntent)
                     .setOngoing(true)
                     .build();
             startForeground(10, notification);
